@@ -27,8 +27,7 @@ block = soup.find('ul', {'class':'lutonarrowblack'})
 pageLinks = block.findAll('a', href=True)
 
 for pageLink in pageLinks:
-	pageUrl = pageLink['href']
-	title = pageLink.text
+	pageUrl = 'http://www.luton.gov.uk' + pageLink['href']
 	html2 = urllib2.urlopen(pageUrl)
 	soup2 = BeautifulSoup(html2)
 	
@@ -38,6 +37,7 @@ for pageLink in pageLinks:
 		url = fileLink['href']
 		if '.xls' in url:
 			# create the right strings for the new filename
+			title = fileLink.text
 			csvYr = title.split(' ')[1]
 			csvMth = title.split(' ')[0][:3]
 			csvMth = csvMth.upper()
