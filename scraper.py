@@ -23,7 +23,7 @@ html = urllib2.urlopen(url)
 soup = BeautifulSoup(html)
 
 # find all entries with the required class
-block = soup.find('ul', {'class':'sectionnavigation'})
+block = soup.find('ul', {'class':'lutonarrowblack'})
 pageLinks = block.findAll('a', href=True)
 
 for pageLink in pageLinks:
