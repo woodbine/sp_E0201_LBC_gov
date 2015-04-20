@@ -28,6 +28,8 @@ pageLinks = block.findAll('a', href=True)
 
 for pageLink in pageLinks:
 	pageUrl = 'http://www.luton.gov.uk' + pageLink['href']
+	print pageUrl
+	
 	html2 = urllib2.urlopen(pageUrl)
 	soup2 = BeautifulSoup(html2)
 	
