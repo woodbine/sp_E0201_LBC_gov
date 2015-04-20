@@ -42,8 +42,8 @@ for pageLink in pageLinks:
 		parsed_link = urlparse.urlsplit(url.encode('utf8'))
 		parsed_link = parsed_link._replace(path=urllib.quote(parsed_link.path))
 		encoded_link = parsed_link.geturl()
-		if url.startswith('/Council_government_'):
-			url = 'http://www.luton.gov.uk'+url
+		if encoded_link.startswith('/Council_government_'):
+			encoded_link = 'http://www.luton.gov.uk'+encoded_link
 			
 		if '.xls' in url:
 			# create the right strings for the new filename
