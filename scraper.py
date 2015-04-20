@@ -37,6 +37,9 @@ for pageLink in pageLinks:
 	
 	for fileLink in fileLinks:
 		url = fileLink['href']
+		if 'luton.gov.uk' not in url:
+			url = 'http://www.luton.gov.uk'+url
+			
 		if '.xls' in url:
 			# create the right strings for the new filename
 			title = fileLink.text
