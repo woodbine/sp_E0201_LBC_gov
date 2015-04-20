@@ -38,7 +38,7 @@ for pageLink in pageLinks:
 	for fileLink in fileLinks:
 		url = fileLink['href']
 		url = url.replace(' ','%20')
-		if url.startswith('/Council_government_')
+		if url.startswith('/Council_government_'):
 			url = 'http://www.luton.gov.uk'+url
 			
 		if '.xls' in url:
