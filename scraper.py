@@ -37,7 +37,9 @@ for pageLink in pageLinks:
 	
 	for fileLink in fileLinks:
 		url = fileLink['href']
-		url = url.replace(' ','%20')
+		parsed_link = urlparse.urlsplit(href.encode('utf8'))
+		parsed_link = parsed_link._replace(path=urllib.quote(parsed_link.path))
+		encoded_link = parsed_link.geturl()
 		if url.startswith('/Council_government_'):
 			url = 'http://www.luton.gov.uk'+url
 			
