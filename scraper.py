@@ -37,10 +37,12 @@ for pageLink in pageLinks:
 	
 	for fileLink in fileLinks:
 		url = fileLink['href']
-		if 'luton.gov.uk' not in url:
+		url = url.replace(' ','%20')
+		if url.startswith('/Council_government_')
 			url = 'http://www.luton.gov.uk'+url
 			
 		if '.xls' in url:
+			print url
 			# create the right strings for the new filename
 			title = fileLink.text
 			csvYr = title.split(' ')[1]
