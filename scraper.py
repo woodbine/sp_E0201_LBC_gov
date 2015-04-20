@@ -2,6 +2,7 @@
 
 import scraperwiki
 import urllib2
+import urlparse
 from datetime import datetime
 from bs4 import BeautifulSoup
 
