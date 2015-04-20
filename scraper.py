@@ -46,7 +46,6 @@ for pageLink in pageLinks:
 			url = 'http://www.luton.gov.uk'+url
 			
 		if '.xls' in url:
-			print url
 			# create the right strings for the new filename
 			title = fileLink.text
 			csvYr = title.split(' ')[1]
